@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "304308000260",
+    "firebase_url": "https://fast-trace-6ba7f.firebaseio.com",
+    "project_id": "fast-trace-6ba7f",
+    "storage_bucket": "fast-trace-6ba7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304308000260:android:aa117b928e89dca288c751",
+        "android_client_info": {
+          "package_name": "com.example.FastTrace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304308000260-14nrtqrfm8qnloed5gq6s2rtfr5lglnp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm0vqljApxxRmmu254uC8AHU23TlVqFHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304308000260-14nrtqrfm8qnloed5gq6s2rtfr5lglnp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
