@@ -13,7 +13,7 @@ class ScannedQR extends StatefulWidget {
 }
 
 class _ScannedQRState extends State<ScannedQR> {
-  final _formKey = GlobalKey<FormState>();
+  // final _formKey = GlobalKey<FormState>();
   final Logs _logs = Logs();
   bool loading = false;
 
@@ -83,34 +83,35 @@ class _ScannedQRState extends State<ScannedQR> {
                     children: [
                       rowData("Firstname: ", passedData[0]),
                       rowData("Lastname: ", passedData[1]),
-                      rowData("Address: ", passedData[2]),
-                      rowData("Birthdate: ", passedData[3]),
-                      rowData("Contact #: ", passedData[4]),
-                      rowData("Date: ", passedData[5]),
-                      rowData("Time: ", passedData[6]),
-                      Form(
-                        key: _formKey,
-                        child: Container(
-                          padding: EdgeInsets.all(15),
-                          child: Column(children: [
-                            TextFormField(
-                              keyboardType: TextInputType.number,
-                              decoration: InputDecoration(
-                                labelText: 'Enter Temperature',
-                              ),
-                              validator: (value) {
-                                if (value.isEmpty) {
-                                  return 'Please enter temperature';
-                                } else if (!isNumeric(value)) {
-                                  return 'Please enter numbers only';
-                                }
-                                return null;
-                              },
-                              onChanged: (val) => temperature = val,
-                            )
-                          ]),
-                        ),
-                      ),
+                      rowData("Gender: ", passedData[2]),
+                      rowData("Age: ", passedData[3]),
+                      rowData("Address: ", passedData[4]),
+                      rowData("Contact #: ", passedData[5]),
+                      rowData("Date: ", passedData[6]),
+                      rowData("Time: ", passedData[7]),
+                      // Form(
+                      //   key: _formKey,
+                      //   child: Container(
+                      //     padding: EdgeInsets.all(15),
+                      //     child: Column(children: [
+                      //       TextFormField(
+                      //         keyboardType: TextInputType.number,
+                      //         decoration: InputDecoration(
+                      //           labelText: 'Enter Temperature',
+                      //         ),
+                      //         validator: (value) {
+                      //           if (value.isEmpty) {
+                      //             return 'Please enter temperature';
+                      //           } else if (!isNumeric(value)) {
+                      //             return 'Please enter numbers only';
+                      //           }
+                      //           return null;
+                      //         },
+                      //         onChanged: (val) => temperature = val,
+                      //       )
+                      //     ]),
+                      //   ),
+                      // ),
                       Container(
                         padding: EdgeInsets.only(top: 10),
                         child: Row(
@@ -147,7 +148,7 @@ class _ScannedQRState extends State<ScannedQR> {
                                   ),
                                   color: Color(0xFF5253ED),
                                   onPressed: () async {
-                                    if (_formKey.currentState.validate()) {
+                                    // if (_formKey.currentState.validate()) {
                                       bool connection =
                                           await Connection().checkConnection();
 
@@ -156,8 +157,6 @@ class _ScannedQRState extends State<ScannedQR> {
                                         setState(() => loading = true);
                                         bool logAdded = await _logs.addLogs(
                                             passedData,
-                                            double.parse(temperature)
-                                                .toStringAsFixed(1),
                                             user.company);
                                         if (logAdded) {
                                           setState(() => loading = false);
@@ -172,8 +171,8 @@ class _ScannedQRState extends State<ScannedQR> {
                                             "No Internet Connection", context,
                                             duration: 5, gravity: Toast.BOTTOM);
                                       }
-                                    }
-                                  }),
+                                    // }
+                                  },),
                             )
                           ],
                         ),

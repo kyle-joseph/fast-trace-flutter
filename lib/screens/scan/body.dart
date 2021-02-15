@@ -32,7 +32,7 @@ class _BodyState extends State<Body> {
     });
     if (_scanBarcode != '-1') {
       List log = qrDataToList(_scanBarcode);
-      if (log.length == 7) {
+      if (log.length == 8) {
         await Navigator.pushNamed(context, '/scanned', arguments: log);
         setState(() => error = '');
       } else {
@@ -54,7 +54,7 @@ class _BodyState extends State<Body> {
 
   List qrDataToList(String log) {
     print(countAsterisk(log));
-    if (countAsterisk(log) == 4) {
+    if (countAsterisk(log) == 5) {
       List convertLog = log.split('*');
       DateTime datetime = DateTime.now();
       convertLog.add(DateFormat.yMd().format(datetime));
